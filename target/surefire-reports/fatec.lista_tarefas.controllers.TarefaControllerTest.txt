@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: fatec.lista_tarefas.controllers.TarefaControllerTest
--------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.357 s -- in fatec.lista_tarefas.controllers.TarefaControllerTest
