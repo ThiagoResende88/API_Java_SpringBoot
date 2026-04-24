@@ -39,11 +39,7 @@ public class TarefaController {
     // Alterar uma tarefa existente (PUT)
     @PutMapping("/{id}")
     public ResponseEntity<Tarefa> atualizar(@PathVariable Long id, @Valid @RequestBody Tarefa tarefa) {
-        try {
-            return ResponseEntity.ok(service.atualizar(id, tarefa));
-        } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();
-        }
+        return ResponseEntity.ok(service.atualizar(id, tarefa));
     }
 
     // Deletar uma tarefa (DELETE)
