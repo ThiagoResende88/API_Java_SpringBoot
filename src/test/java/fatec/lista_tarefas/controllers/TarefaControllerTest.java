@@ -1,7 +1,7 @@
 package fatec.lista_tarefas.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import fatec.lista_tarefas.controllers.enums.StatusTarefa;
+import fatec.lista_tarefas.models.enums.StatusTarefa;
 import fatec.lista_tarefas.models.Tarefa;
 import fatec.lista_tarefas.services.TarefaService;
 import org.junit.jupiter.api.BeforeEach;

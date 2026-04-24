@@ -1,6 +1,6 @@
 package fatec.lista_tarefas.repositories;
 
-import fatec.lista_tarefas.controllers.enums.StatusTarefa;
+import fatec.lista_tarefas.models.enums.StatusTarefa;
 import fatec.lista_tarefas.models.Tarefa;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

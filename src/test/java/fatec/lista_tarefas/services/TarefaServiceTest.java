@@ -1,6 +1,6 @@
 package fatec.lista_tarefas.services;
 
-import fatec.lista_tarefas.controllers.enums.StatusTarefa;
+import fatec.lista_tarefas.models.enums.StatusTarefa;
 import fatec.lista_tarefas.models.Tarefa;
 import fatec.lista_tarefas.repositories.TarefaRepository;
 import org.junit.jupiter.api.BeforeEach;

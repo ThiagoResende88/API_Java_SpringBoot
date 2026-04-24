@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
 
-import fatec.lista_tarefas.controllers.enums.StatusTarefa;
+import fatec.lista_tarefas.models.enums.StatusTarefa;
 
 @Entity
 @Table(name = "tarefas")
