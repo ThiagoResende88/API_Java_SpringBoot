@@ -2,6 +2,7 @@ package fatec.lista_tarefas.controllers;
 
 import fatec.lista_tarefas.models.Tarefa;
 import fatec.lista_tarefas.services.TarefaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,13 +32,13 @@ public class TarefaController {
 
     // Criar uma nova tarefa (POST)
     @PostMapping
-    public Tarefa criar(@RequestBody Tarefa tarefa) {
+    public Tarefa criar(@Valid @RequestBody Tarefa tarefa) {
         return service.salvar(tarefa);
     }
 
     // Alterar uma tarefa existente (PUT)
     @PutMapping("/{id}")
-    public ResponseEntity<Tarefa> atualizar(@PathVariable Long id, @RequestBody Tarefa tarefa) {
+    public ResponseEntity<Tarefa> atualizar(@PathVariable Long id, @Valid @RequestBody Tarefa tarefa) {
         try {
             return ResponseEntity.ok(service.atualizar(id, tarefa));
         } catch (RuntimeException e) {

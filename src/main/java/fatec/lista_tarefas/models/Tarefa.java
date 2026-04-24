@@ -1,6 +1,8 @@
 package fatec.lista_tarefas.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import java.time.LocalDateTime;
 
@@ -15,9 +17,12 @@ public class Tarefa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "O nome da tarefa é obrigatório")
+    @Size(min = 3, max = 100, message = "O nome deve ter entre 3 e 100 caracteres")
     @Column(nullable = false)
     private String nome;
 
+    @Size(max = 255, message = "A descrição não pode exceder 255 caracteres")
     private String descricao;
 
     @Enumerated(EnumType.STRING)
