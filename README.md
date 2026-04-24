@@ -2,48 +2,56 @@
 
 Este projeto foi desenvolvido como parte da avaliação do 1º Bimestre da disciplina de **Laboratório de Desenvolvimento Multiplataforma** no curso de **Desenvolvimento de Software Multiplataforma (6º DSM)** na **Faculdade de Tecnologia de Franca - Dr. Thomaz Novelino**.
 
+## 👥 Desenvolvedores (Dupla)
+- **Danilo Benedetti Ribeiro**
+- **Thiago Dias Resende**
+
 ## 💻 Sobre o projeto
-Aplicação robusta para o gerenciamento de tarefas do dia a dia, permitindo o controle completo do ciclo de vida de uma tarefa (CRUD).
+Aplicação robusta para o gerenciamento de tarefas do dia a dia, permitindo o controle completo do ciclo de vida de uma tarefa (CRUD). A API segue os princípios REST e as melhores práticas de desenvolvimento com Spring Boot.
 
 ## 🚀 Entidades e Atributos
 A entidade principal **Tarefa** contém os seguintes campos:
-- **Nome**: Identificação da tarefa.
-- **Descrição**: Detalhamento da atividade.
-- **Status**: Estado atual (PENDENTE, EM_ANDAMENTO, CONCLUIDA).
+- **Nome**: Identificação da tarefa (obrigatório, 3-100 caracteres).
+- **Descrição**: Detalhamento da atividade (máx. 255 caracteres).
+- **Status**: Estado atual (Pendente, Em Andamento, Concluída).
 - **Observações**: Notas adicionais.
 - **Data de Criação**: Gerada automaticamente no cadastro.
 - **Data de Atualização**: Atualizada automaticamente a cada modificação.
 
-## 🚧 Requisitos Implementados
-- [x] Criar Tarefa (POST)
-- [x] Listar Tarefas (GET)
-- [x] Alterar Tarefa (PUT)
-- [x] Deletar Tarefa (DELETE)
+## 🚧 Requisitos e Diferenciais Implementados
+- [x] **CRUD Completo**: Criar, Listar, Alterar e Deletar Tarefas.
+- [x] **Bean Validation**: Validação rigorosa dos campos de entrada com Hibernate Validator.
+- [x] **Global Exception Handler**: Tratamento centralizado de erros, retornando mensagens claras em JSON (400 Bad Request / 404 Not Found).
+- [x] **Injeção por Construtor**: Seguindo as recomendações oficiais do Spring para melhor testabilidade e imutabilidade.
+- [x] **Domínio Rico**: Enums com descrições amigáveis e localização semântica correta.
 
 ## 🎲 Regras de Negócio
 - Sistema simplificado sem necessidade de login.
 - Sem conceito de múltiplos usuários (foco na funcionalidade principal).
+- Integridade de dados garantida na camada de serviço e banco de dados.
 
 ## 🛠 Tecnologias Utilizadas
 - **Linguagem**: Java 17
 - **Framework**: Spring Boot 3.2.5
 - **Persistência**: Spring Data JPA / Hibernate
-- **Banco de Dados**: PostgreSQL (Produção) / H2 (Testes/Dev)
+- **Banco de Dados**: PostgreSQL (Produção) / H2 (Desenvolvimento/Testes)
+- **Validação**: Spring Boot Starter Validation
 - **Testes**: JUnit 5, Mockito e MockMvc
 - **Outros**: Lombok para produtividade
 
 ## 📂 Estrutura do Projeto
 - `controllers`: Endpoints da API REST.
-- `services`: Lógica de negócio e implementação.
+- `services`: Camada de serviço com lógica de negócio.
 - `repositories`: Interface de comunicação com o banco de dados.
 - `models`: Definição da entidade e mapeamento ORM.
-- `enums`: Definição dos status das tarefas.
+- `models.enums`: Definição dos estados da tarefa com descrições.
+- `exceptions`: Tratamento global de erros e respostas customizadas.
 
 ## 🧪 Testes da Aplicação
-O projeto conta com uma suíte de testes automatizados cobrindo:
+O projeto conta com uma suíte de 17 testes automatizados cobrindo:
 - **Testes Unitários**: Validação da lógica no `TarefaService`.
 - **Testes de Integração**: Validação dos endpoints no `TarefaController` usando MockMvc.
-- **Testes de Repositório**: Validação da persistência no banco de dados.
+- **Testes de Repositório**: Validação da persistência no banco de dados (H2).
 
 Para rodar os testes:
 ```bash
