@@ -11,8 +11,11 @@ import java.util.Optional;
 @Service
 public class TarefaService {
 
-    @Autowired
-    private TarefaRepository repository;
+    private final TarefaRepository repository;
+
+    public TarefaService(TarefaRepository repository) {
+        this.repository = repository;
+    }
 
     // Método para Listar todas as tarefas
     public List<Tarefa> listarTodas() {

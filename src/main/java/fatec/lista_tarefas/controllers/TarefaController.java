@@ -13,8 +13,11 @@ import java.util.List;
 @RequestMapping("/api/tarefas")
 public class TarefaController {
 
-    @Autowired
-    private TarefaService service;
+    private final TarefaService service;
+
+    public TarefaController(TarefaService service) {
+        this.service = service;
+    }
 
     // Listar todas as tarefas (GET)
     @GetMapping
